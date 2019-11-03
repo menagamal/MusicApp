@@ -24,7 +24,9 @@ class AlbumCollectionViewCell: UICollectionViewCell {
         self.album = album
         labelAlbumName.text = album.name
         if album.imageStr != nil {
+            
             self.getImageFromUrl(str: album.imageStr!)
+            
         } else {
             let dataDecoded : Data = Data(base64Encoded: self.album.imageToBaseStr!, options: .ignoreUnknownCharacters)!
             let decodedimage:UIImage = UIImage(data: dataDecoded)!

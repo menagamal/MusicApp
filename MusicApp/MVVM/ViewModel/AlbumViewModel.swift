@@ -26,7 +26,6 @@ class AlbumsViewModel {
         self.view = view
         self.vc = vc
         self.album = AlbumModel(viewModel:self)
-
         
     }
     

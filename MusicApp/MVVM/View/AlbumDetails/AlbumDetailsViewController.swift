@@ -66,19 +66,19 @@ class AlbumDetailsViewController: UIViewController {
     @objc
     func saveToDB() {
         
-        let imageData = albumImageView.image!.pngData()
-        item.imageToBaseStr = imageData!.base64EncodedString(options: .lineLength76Characters)
+            let imageData = albumImageView.image!.pngData()
+            item.imageToBaseStr = imageData!.base64EncodedString(options: .lineLength76Characters)
 
-        if DbManager.shared.save(item: item) {
-            Toast.showAlert(viewController: self, text: "Saved")
-            Constants.FAVOURITE_ALBUMS.append(item.name!)
-            
-            favouriteBtn = UIBarButtonItem(title: "unFavourite", style: .plain, target: self, action: #selector(removeToDB))
-            self.navigationItem.rightBarButtonItem = favouriteBtn
+            if DbManager.shared.save(item: item) {
+                Toast.showAlert(viewController: self, text: "Saved")
+                Constants.FAVOURITE_ALBUMS.append(item.name!)
+                
+                favouriteBtn = UIBarButtonItem(title: "unFavourite", style: .plain, target: self, action: #selector(removeToDB))
+                self.navigationItem.rightBarButtonItem = favouriteBtn
 
-        } else {
-            Toast.showAlert(viewController: self, text: "Something Went Wroung")
-        }
+            } else {
+                Toast.showAlert(viewController: self, text: "Something Went Wroung")
+            }
         
     }
     

@@ -17,8 +17,7 @@ class DbManager {
     static let shared = DbManager()
 
     
-    private init() {
-        
+    private init() {   
     }
     
     

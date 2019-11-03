@@ -25,7 +25,6 @@ class AlbumModel : Mappable , ApiManagerDelegate {
     private var viewModel:AlbumsViewModel!
     
     
-    
     init() {
         
     }
